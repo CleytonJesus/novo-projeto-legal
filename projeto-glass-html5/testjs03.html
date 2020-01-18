@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Acenda a lâmpada</title>
+    <script>
+        /*
+            () -> Tudo que estiver dentro de parênteses, são parâmetros.
+            {} -> Tudo que estiver dentro de colchetes, são códigos.
+        */
+        var quebrada = false;/*Variável global acessível a todas as funções do mesmo script.*/
+        function mudaLampada(tipo) {/*Funções são conjuntos de rotinas*/
+            /*Manipulando elementos no HTML*/
+            if (!quebrada) { /*Condição 'IF';  ! = não; quebrada = identificar status da lâmpada.*/
+                document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-" + tipo + ".jpg";
+                if (tipo == 'quebrada') {
+                    quebrada = true;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Acenda a lâmpada</h1>
+    <img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('acesa')"
+        onmouseout="mudaLampada('apagada')" onclick="mudaLampada('quebrada')">
+</body>
+
+</html>

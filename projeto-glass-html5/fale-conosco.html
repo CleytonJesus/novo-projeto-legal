@@ -1,0 +1,210 @@
+<!--HTML = foca em semântica; CSS = foca no estilo(design) da página-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--Tags semânticas do HTML 5 (Section(seções),Footer(rodapé),aside(conteúdo lateral)-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo Sobre Google Glass</title>
+    <!--Tag para importação de arquivo CSS-->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="_css/form.css" />
+    <!--Tag para importação do arquivo JS-->
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+    function calc_total(){
+        var qtd = parseInt(document.getElementById('cQtd').value);
+        tot = qtd * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+    </script>
+</head>
+
+<body onload="mudaFoto('contato')">
+    <div id="interface">
+        <!--Divisão = divide/agrupa-->
+
+        <header id="cabecalho">
+            <!--Header(Define o cabeçalho da página)-->
+            <hgroup>
+                <!-- Agrupa os títulos-->
+                <h1> Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+
+            <!--img(tag para inserir imagens)-->
+            <img id="icone" src="contato">
+            <nav id="menu">
+                <!--Contêiner de navegação(para menus)-->
+                <!--OL(Ordered Lists = Listas ordenadas/ UL(Unordered lists = Listas não ordenadas/ LI(List Items) = ficam dentro da lista-->
+                <h1>Menu Principal</h1>
+                <ul>
+                    <!--Tipos de lista 1(numerada);a(alfabética);i(números romanos); start(onde a lista irá iniciar);ul(lista com demarcadores); type(square,circle,disc-->
+                    <li onmouseover="mudaFoto('home')" onmouseout="mudaFoto('contato')"> <a href="index.html">Home</a>
+                    </li>
+                    <li onmouseover="mudaFoto('specs')" onmouseout="mudaFoto('contato')"><a
+                            href="specs.html">Especificações</a></li>
+                    <li onmouseover="mudaFoto('fotos')" onmouseout="mudaFoto('contato')"><a href="fotos.html">Fotos</a>
+                    </li>
+                    <li onmouseover="mudaFoto('multi')" onmouseout="mudaFoto('contato')"><a
+                            href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('contato')" onmouseout="mudaFoto('contato')"><a
+                            href="fale-conosco.html">Fale conosco</a></li>
+                </ul>
+
+
+            </nav>
+
+        </header>
+        <section id="corpo-full">
+            <article id="noticia-principal">
+
+                <header id="cabecalho-artigo">
+                    <h3>
+                        Fale Conosco > Contato
+                    </h3>
+                    <h1>
+                        Formulário de Contato
+                    </h1>
+                    <h2>
+                        por Gustavo Guanabara
+                    </h2>
+                    <h3 class="direita">
+                        Atualizado em 01/Maio/2013
+                    </h3>
+                </header>
+                <!--Tag para geração de formulários-->
+                <!--
+                    GET - não seguro e rápido, dados enviados na URL do navegador(usado para buscas simples, sem nenhuma informação particular).
+
+                    POST - mais seguro que o GET(porém não criptografa) mas não rápido, dados enviados por pacotes, evitando a exposição dos dados informados(usado para dados mais complexos que contenha senha,número de cartão de banco etc...).
+                -->
+                <form method="POST" id="fContato" action="mailto:spfc.100gols@gmail.com" oninput="calc_total();">
+                    <!--Action para onde os dados vão-->
+                    <fieldset id="usuario">
+                        <!--Fieldset(conjunto de campos), agrupa os itens dentro da tag-->
+                        <legend>
+                            <!--Legend(um mini título para fieldset)-->
+                            Identificação do Usuário
+                        </legend>
+                        <p>
+                            <!--Input tag para entrada de dados,size(mostra os caractéres na caixa),maxlength(quantidade de caractéres permitido)-->
+                            <label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20"
+                                maxlength="30" placeholder="Nome Completo" />
+                        </p>
+                        <p>
+                            <label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="8"
+                                maxlength="8" placeholder="8 dígitos" />
+                        </p>
+                        <p>
+                            <label for="cMail">E-mail:</label><input type="email" name="tMail" id="cMail" size="20"
+                                maxlength="40" />
+                        </p>
+                        <fieldset id="sexo">
+                            <legend>
+                                Sexo:
+                            </legend>
+                            <input type="radio" name="tSexo" id="cMasc" checked /> <label
+                                for="cMasc">Masculino</label><br />
+                            <!--Label relaciona o objeto ao rótulo.-->
+                            <input type="radio" name="tSexo" id="cFem" /> <label for="cFem">Feminino</label>
+                        </fieldset>
+                        <p>
+                            Data de Nascimento:<input type="date" />
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>
+                            Endereço do Usuário
+                        </legend>
+                        <p>
+                            <label for="cRua">Logradouro:</label><input type="text" name="tRua" id="cRua" size="13"
+                                maxlength="80" placeholder="Rua,Avenida,Travessa..." />
+                        </p>
+                        <p>
+                            <label for="cNum">Número:</label><input type="number" name="tNum" id="cNUm" min="0"
+                                max="99999" />
+                        </p>
+                        <p>
+                            <label for="cEst">Estado:</label>
+                            <select name="tEst" id="cEst">
+                                <!--OptGroup = agrupa as opções de um select-->
+                                <optgroup label="Região Sudeste">
+                                    <option value="RJ">Rio De Janeiro</option>
+                                    <option value="SP" selected>São Paulo</option>
+                                    <option value="MG">Minas Gerais</option>
+                                </optgroup>
+
+                                <optgroup label="Região Sul">
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                </optgroup>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="cCid">Cidade:</label><input type="text" name="tCid" id="cCid" maxlength="40"
+                                size="20" placeholder="Sua Cidade" list="cidades" />
+                            <!--Gera uma lista baseada no datalist de auto complemento, para que o usuário não digite errado-->
+                            <datalist id="cidades">
+                                <option value="Rio de Janeiro"></option>
+                                <option value="Nova Iguaçu"></option>
+                                <option value="Niterói"></option>
+                                <option value="Belford Roxo"></option>
+                            </datalist>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend>
+                            Mensagem do Usuário
+                        </legend>
+                        <p>
+                            <label for="cUrg">Grau de Urgência:</label>
+                            MIN <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2" />MÁX
+                        </p>
+                        <p>
+                            <label for="cMsg">Mensagem:</label>
+                            <!--Permite várias informações para enviar mensagens.-->
+                            <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui a sua mensagem.">
+                                
+                            </textarea>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend>
+                            Quero um Google Glass
+                        </legend>
+                        <p><input type="checkbox" name="tPed" id="cPed" checked/>
+                            <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label>
+                        </p>
+                        <p>
+                            <label for="cCor">Cor:</label><input type="color" id="cCor" value="#0000FF"/>
+                        </p>
+                        <p>
+                            <label for="cQtd">Quantidade:</label>
+                            <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/>
+                        </p>
+                        <p>
+                            <label for="cTot">Preço Total: R$</label><input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/>
+                        </p>
+                    </fieldset>
+
+
+                    <input type="image" name="tEnviar" src="/htdocs/_imagens/botao-enviar.png"/>
+                </form>
+            </article>
+        </section>
+
+        <footer id="rodape">
+            <p>Copyright 2013&copy; - by <span style="font-weight: bolder;">Cleyton Jesus</span><br />
+                <a href="https://www.facebook.com/cleyton.jesusdossantossantana" target="_blank"
+                    style="font-size: xx-large;color: #606060;text-shadow: black 1px 1px .8px ;">Facebook</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*Formatações específicas à página de específicações do Google Glass*/
+
+section#conteudo{
+    width: 1000px;
+    margin: auto; /*O conteúdo irá ficar centralizado independentemente do espaço ocupado.*/
+
+}
+iframe#frame-spec{
+    width: 400px;
+    height: 280px;
+    border: none;/*Esconde as bordas do iframe*/
+    overflow: hidden;/*Não permite fazer rolagem da página*/
+}
+
+iframe#frame-spec::-webkit-scrollbar{
+    display: none;/*Desaparece com as barras de rolagem do Iframe*/
+}

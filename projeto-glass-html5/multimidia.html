@@ -1,0 +1,92 @@
+<!--HTML = foca em semântica; CSS = foca no estilo(design) da página-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--Tags semânticas do HTML 5 (Section(seções),Footer(rodapé),aside(conteúdo lateral)-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo Sobre Google Glass</title>
+    <!--Tag para importação de arquivo CSS-->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="_css/media.css" />
+    <!--Tag para importação do arquivo JS-->
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+</head>
+<body onload="mudaFoto('multi')">
+    <div id="interface">
+        <!--Divisão = divide/agrupa-->
+
+        <header id="cabecalho">
+            <!--Header(Define o cabeçalho da página)-->
+            <hgroup>
+                <!-- Agrupa os títulos-->
+                <h1> Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+
+            <!--img(tag para inserir imagens)-->
+            <img id="icone" src="multi">
+            <nav id="menu">
+                <!--Contêiner de navegação(para menus)-->
+                <!--OL(Ordered Lists = Listas ordenadas/ UL(Unordered lists = Listas não ordenadas/ LI(List Items) = ficam dentro da lista-->
+                <h1>Menu Principal</h1>
+                <ul>
+                    <!--Tipos de lista 1(numerada);a(alfabética);i(números romanos); start(onde a lista irá iniciar);ul(lista com demarcadores); type(square,circle,disc-->
+                    <li onmouseover="mudaFoto('home')" onmouseout="mudaFoto('multi')"> <a
+                            href="index.html">Home</a></li>
+                    <li onmouseover="mudaFoto('specs')" onmouseout="mudaFoto('multi')"><a
+                            href="specs.html">Especificações</a></li>
+                    <li onmouseover="mudaFoto('fotos')" onmouseout="mudaFoto('multi')"><a
+                            href="fotos.html">Fotos</a></li>
+                    <li onmouseover="mudaFoto('multi')" onmouseout="mudaFoto('multi')"><a
+                            href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('contato')" onmouseout="mudaFoto('multi')"><a
+                            href="fale-conosco.html">Fale conosco</a></li>
+                </ul>
+
+
+            </nav>
+
+        </header>
+
+<section id="corpo-full">
+    <article id="noticia-principa">
+        <header id="cabecalho-artigo">
+            <h3>
+                Glass > Multimídia
+            </h3>
+            <h1>
+                Sons e Vídeos
+            </h1>
+            <h2>
+                por Gustavo Guanabara
+            </h2>
+            <h3 class="direita">
+                Atualizado em 01/Maio/2013
+                
+            </h3>
+        </header>
+        <!--Tags para aúdio e vídeo-->
+     <div id="tv-radio">
+        <audio id="musica" controls="controls">
+            <source src="_media/2009-lovers-carvings-bibio.mp3" type="audio/mpeg" />
+            Desculpe, mas não foi possível o carregamento do aúdio.
+        </audio>
+        <video id="filme" controls="controls" poster="_imagens/video-mini03.jpg">
+            <source src="_media/getting-started.mp4" type="video/mp4"/>
+            Desculpe, mas não foi possível o carregamento do vídeo.<!--Mensagem de erro-->
+        </video>
+     </div>
+    </article>
+</section>
+
+<footer id="rodape">
+    <p>Copyright 2013&copy; - by <span style="font-weight: bolder;">Cleyton Jesus</span><br />
+        <a href="https://www.facebook.com/cleyton.jesusdossantossantana" target="_blank"
+            style="font-size: xx-large;color: #606060;text-shadow: black 1px 1px .8px ;">Facebook</a></p>
+</footer>
+</div>
+
+</body>
+
+</html>

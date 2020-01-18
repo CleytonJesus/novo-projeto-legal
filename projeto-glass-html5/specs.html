@@ -1,0 +1,105 @@
+<!--HTML = foca em semântica; CSS = foca no estilo(design) da página-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--Tags semânticas do HTML 5 (Section(seções),Footer(rodapé),aside(conteúdo lateral)-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo Sobre Google Glass</title>
+    <!--Tag para importação de arquivo CSS-->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="_css/specs.css" />
+    <!--Tag para importação do arquivo JS-->
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+</head>
+
+<body onload="mudaFoto('specs')">
+    <div id="interface">
+        <!--Divisão = divide/agrupa-->
+
+        <header id="cabecalho">
+            <!--Header(Define o cabeçalho da página)-->
+            <hgroup>
+                <!-- Agrupa os títulos-->
+                <h1> Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+
+            <!--img(tag para inserir imagens)-->
+            <img id="icone" src="specs">
+            <nav id="menu">
+                <!--Contêiner de navegação(para menus)-->
+                <!--OL(Ordered Lists = Listas ordenadas/ UL(Unordered lists = Listas não ordenadas/ LI(List Items) = ficam dentro da lista-->
+                <h1>Menu Principal</h1>
+                <ul>
+                    <!--Tipos de lista 1(numerada);a(alfabética);i(números romanos); start(onde a lista irá iniciar);ul(lista com demarcadores); type(square,circle,disc-->
+                    <li onmouseover="mudaFoto('home')" onmouseout="mudaFoto('specs')"> <a href="index.html">Home</a>
+                    </li>
+                    <li onmouseover="mudaFoto('specs')" onmouseout="mudaFoto('specs')"><a
+                            href="specs.html">Especificações</a></li>
+                    <li onmouseover="mudaFoto('fotos')" onmouseout="mudaFoto('specs')"><a href="fotos.html">Fotos</a>
+                    </li>
+                    <li onmouseover="mudaFoto('multi')" onmouseout="mudaFoto('specs')"><a
+                            href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('contato')" onmouseout="mudaFoto('specs')"><a
+                            href="fale-conosco.html">Fale conosco</a></li>
+                </ul>
+
+
+            </nav>
+
+        </header>
+
+        <section id="corpo-full">
+            <article id="noticia-principal">
+
+                <header id="cabecalho-artigo">
+                    <h3>
+                        Glass > Especificações
+                    </h3>
+                    <h1>
+                        Raio-X no Google Glass
+                    </h1>
+                    <h2>
+                        por Gustavo Guanabara
+                    </h2>
+                    <h3 class="direita">
+                        Atualizado em 01/Maio/2013
+                    </h3>
+                </header>
+                <p>
+                    Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google
+                    Glass.
+                    Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.
+                </p>
+
+                <section id="conteudo">
+                    <img src="_imagens/glass-esquema-marcado.jpg" usemap="#meumapa">
+                    <map name="meumapa">
+                        <!--Permite transformar partes da imagem em algo clicável-->
+                        <!--O Map(possui um nome de referência) têm area(Possui o shape(forma),coordenadas,o arquivo a ser carregado(href) e o alvo(target) onde será aberto o arquivo)-->
+                        <!--Para estar ciente das coordenadas, basta abrir a foto requerida em qualquer editor de imagens(Photoshop etc...) e capturar as coordenadas da imagem-->
+                        <area shape="rect" coords="179,202,270,260" href="google-glass.html#tela" target="janela"/>
+                        <!--Coordenadas para áreas circulares(ponto central,raio)-->
+                        <area shape="circle" coords="158,243,12" href="google-glass.html#camera" target="janela"/>
+                        <area shape="circle" coords="73,52,12" href="google-glass.html#gadgets" target="janela"/>
+                        <!--Poligonal varia em coordenadas-->
+                        <area shape="poly" coords="28,143,83,216,84,249,27,169" href="google-glass.html#sensores" target="janela"/>
+                    </map>
+                    <iframe src="google-glass.html" name="janela" id="frame-spec"></iframe>
+                    <!--O iframe permite a uma página que carregue informações de outro arquivo nela mesma em uma tela à parte-->
+
+                </section>
+            </article>
+        </section>
+
+        <footer id="rodape">
+            <p>Copyright 2013&copy; - by <span style="font-weight: bolder;">Cleyton Jesus</span><br />
+                <a href="https://www.facebook.com/cleyton.jesusdossantossantana" target="_blank"
+                    style="font-size: xx-large;color: #606060;text-shadow: black 1px 1px .8px ;">Facebook</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

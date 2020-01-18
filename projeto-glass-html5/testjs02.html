@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Acenda a lâmpada</title>
+    <script>
+        /*
+            () -> Tudo que estiver dentro de parênteses, são parâmetros.
+            {} -> Tudo que estiver dentro de colchetes, são códigos.
+        */
+       
+        function acendeLampada() {/*Funções são conjuntos de rotinas*/
+            /*Manipulando elementos no HTML*/
+           document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-acesa.jpg";
+            
+        }
+        function apagaLampada(){
+            document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-apagada.jpg";
+        }
+        function quebraLampada(){
+            document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-quebrada.jpg";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Acenda a lâmpada</h1>
+    <img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()">
+</body>
+
+</html>
